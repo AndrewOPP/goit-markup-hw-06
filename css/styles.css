@@ -487,12 +487,12 @@ svg {
   line-height: 2;
 }
 
-.footer-form-mail-input:required:focus:not(:placeholder-shown):valid {
+.footer-form-mail-input:required:not(:placeholder-shown):valid {
   color: #31d0aa;
   border-color: #31d0aa;
 }
 
-.footer-form-mail-input:required:focus:not(:placeholder-shown):invalid {
+.footer-form-mail-input:required:not(:placeholder-shown):invalid {
   color: #d16868;
   border-color: #d16868;
 }
@@ -933,4 +933,48 @@ svg {
 
 .form-agreement-link {
   color: #4d5ae5;
+}
+
+/**
+  |============================
+  | TEST
+  |============================
+*/
+
+.label-footer-e-mail {
+  position: absolute;
+  color: #ffffff;
+  top: 11px;
+  left: 16px;
+  transition: transform 500ms, scale 500ms;
+  z-index: 100;
+
+  user-select: none;
+}
+
+.footer-form-mail-input:focus + .label-footer-e-mail,
+.footer-form-mail-input:not(:placeholder-shown) + .label-footer-e-mail {
+  transform: translateX(485%);
+  scale: 0.9;
+}
+
+.footer-form-mail-input {
+  color: #ffffff;
+  padding-right: 61px;
+  padding-left: 10px;
+}
+
+.footer-form-button-div-class {
+  position: relative;
+  display: flex;
+}
+
+.footer-form-mail-input:required:not(:placeholder-shown):valid
+  + .label-footer-e-mail {
+  color: #21d672;
+}
+
+.footer-form-mail-input:required:not(:placeholder-shown):invalid
+  + .label-footer-e-mail {
+  color: #d33434;
 }
